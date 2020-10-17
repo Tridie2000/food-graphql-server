@@ -1,4 +1,6 @@
-const { ApolloServer, gql } = require('apollo-server');
+import { ApolloServer, gql } from "apollo-server";
+import { typeDefs } from "./typeDefs";
+import { resolvers } from "./resolvers";
 
 // ⚽️  Goal
 // --------
@@ -21,16 +23,16 @@ const { ApolloServer, gql } = require('apollo-server');
 
 // Type definitions define the "shape" of your data and specify
 // which ways the data can be fetched from the GraphQL server.
-const typeDefs = gql`
-  type Query {
-    test: String
-  }
-`;
+// const typeDefs = gql`
+//   type Query {
+//     test: String
+//   }
+// `;
 
 // Resolvers define the technique for fetching the types in the
 // schema.
-const resolvers = {
-};
+// const resolvers = {
+// };
 
 // In the most basic sense, the ApolloServer can be started
 // by passing type definitions (typeDefs) and the resolvers
@@ -39,8 +41,7 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 // This `listen` method launches a web-server. Existing apps
 // can utilize middleware options.
-server.listen()
-  .then(({ url }) => {
-    console.log(`🚀  Food GraphQL Server ready at ${url}.
+server.listen().then(({ url }) => {
+  console.log(`🚀  Food GraphQL Server ready at ${url}.
 ⛄️  Go to this url to play with GraphQL in the GraphQL Playground.`);
-  });
+});
