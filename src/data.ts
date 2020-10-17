@@ -2,7 +2,6 @@ import { Product } from "./models/product.model";
 import { Store } from "./models/store.model";
 
 const uuid = require("uuid");
-
 const stores: Store[] = [
   {
     city: "Aalst",
@@ -68,6 +67,10 @@ export function createStore(store: Store) {
   stores.push(store);
 }
 
-export function getStores() {
+export function getStores(): Store[] {
   return stores;
+}
+
+export function getProducts(): Product[] {
+  return products;
 }
