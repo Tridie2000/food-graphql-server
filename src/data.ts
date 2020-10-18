@@ -63,8 +63,17 @@ const reservations = [];
 
 let reservationProducts = [];
 
-export function createStore(store: Store) {
+export function createStore(
+  city: string,
+  name: string,
+  number: number,
+  postalCode: string,
+  street: string
+) {
+  const id = uuid();
+  const store = new Store(id, city, name, number, postalCode, street);
   stores.push(store);
+  return store;
 }
 
 export function getStores(): Store[] {

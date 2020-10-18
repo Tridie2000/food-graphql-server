@@ -22,4 +22,14 @@ export const typeDefs = gql`
     stores: [Store]
     products(storeId: String): [Product]
   }
+
+  type Mutation {
+    createStore(
+      city: String
+      name: String
+      number: Int
+      postalCode: String
+      street: String
+    ): Store
+  }
 `;

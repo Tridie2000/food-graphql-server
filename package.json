@@ -14,9 +14,11 @@
   "dependencies": {
     "apollo-server": "^2.3.1",
     "graphql": "^14.1.1",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
+    "@types/yup": "^0.29.8",
     "apollo-server-types": "^0.6.0",
     "nodemon": "^1.18.9",
     "typescript": "^4.0.3"
