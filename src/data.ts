@@ -1,4 +1,6 @@
 import { Product } from "./models/product.model";
+import { Reservation } from "./models/reservation.model";
+import { ReservationProduct } from "./models/reservationProduct.model";
 import { Store } from "./models/store.model";
 
 const uuid = require("uuid");
@@ -61,7 +63,7 @@ const products: Product[] = [
 
 const reservations = [];
 
-let reservationProducts = [];
+let reservationProducts: ReservationProduct[] = [];
 
 export function createStore(
   city: string,
@@ -82,4 +84,13 @@ export function getStores(): Store[] {
 
 export function getProducts(): Product[] {
   return products;
+}
+
+export function createReservation(reservation: Reservation) {
+  reservation.reservationProducts.forEach((product) => {
+    reservationProducts.push(product);
+  });
+  console.log(reservationProducts);
+  console.log(reservation);
+  return reservation;
 }

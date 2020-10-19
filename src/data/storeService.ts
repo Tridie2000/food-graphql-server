@@ -2,10 +2,17 @@ import { Store } from "../models/store.model";
 import * as data from "../data";
 import * as yup from "yup";
 import { Product } from "../models/product.model";
+import { Reservation } from "../models/reservation.model";
 
 export class StoreService {
   getStores(): Store[] {
     return data.getStores();
+  }
+
+  getStore(id: string): Store | undefined {
+    return data.getStores().find((store: Store) => {
+      return store.id === id;
+    });
   }
 
   getProducts(storeId: string): Product[] {
@@ -40,5 +47,11 @@ export class StoreService {
     if (valid) {
       return data.createStore(city, name, number, postalCode, street);
     }
+  }
+
+  createReservation(reservation: Reservation): Reservation {
+    const result = data.createReservation(reservation);
+    console.log(result);
+    return result;
   }
 }
