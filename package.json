@@ -4,9 +4,9 @@
   "description": "The GraphQL server to reserve food.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon build/index.js",
+    "serve": "nodemon build/index.js",
     "build": "tsc",
-    "serve": "npm run build && npm run start"
+    "start": "npm run build && npm run serve"
   },
   "keywords": [],
   "author": "",
