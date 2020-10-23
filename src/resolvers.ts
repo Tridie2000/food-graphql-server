@@ -20,7 +20,7 @@ export const resolvers = {
         args.street
       ),
     createReservation: (parent: any, args: any, context: any, info: any) =>
-      service.createReservation(args.reservationProduct),
+      service.createReservation(args.reservation),
   },
   Store: {
     products: (parent: any, args: any, context: any, info: any) =>

@@ -53,6 +53,6 @@ export const typeDefs = gql`
       postalCode: String
       street: String
     ): Store
-    createReservation(reservationProduct: ReservationInput): Reservation
+    createReservation(reservation: ReservationInput): Reservation
   }
 `;
